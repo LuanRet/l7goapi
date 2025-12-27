@@ -876,7 +876,7 @@ API Terminal pronto para uso.
             
             const userId = Math.floor(Math.random() * 9000) + 1000;
             
-            addOutput(`🎵 Enviando para API Spotify...`);
+            addOutput(`[GO] enviando requisição...`);
             
             try {
                 const response = await fetch('https://go.luangg.cloud/spotify/', {
@@ -936,8 +936,8 @@ API Terminal pronto para uso.
             return;
         }
         
-        addOutput(`🔗 URL detectada: ${input}`);
-        addOutput(`🎬 ID extraído: ${videoId}`);
+        addOutput(`[GO] URL detectada: ${input}`);
+        addOutput(`[GO] ID extraído: ${videoId}`);
     } else {
         
         videoId = input.split('?')[0].split('&')[0];
@@ -955,8 +955,8 @@ API Terminal pronto para uso.
     
     currentVideoId = videoId;
     
-    addOutput(`🎬 Processando YouTube...`);
-    addOutput(`📹 ID: ${videoId}`);
+    addOutput(`[GO] enviando requisição...`);
+    addOutput(`[GO] ID: ${videoId}`);
     
     const videoUrl = `https://yt.luangg.cloud/video/${videoId}?quality=1080p`;
     
@@ -1030,7 +1030,7 @@ API Terminal pronto para uso.
                 
                 mediaPlayer.classList.add('active');
                 
-                addOutput(`🎵 Player carregado`);
+                addOutput(`[✓] Player carregado`);
                 
             } catch (error) {
                 addOutput(`❌ Erro ao carregar áudio: ${error.message}`);
@@ -1115,14 +1115,14 @@ API Terminal pronto para uso.
                 link.href = currentAudioUrl;
                 link.download = `spotify_${Date.now()}.mp3`;
                 link.click();
-                addOutput('📥 Download iniciado');
+                addOutput('[✓] Download iniciado');
             }
         }
 
         function openYouTubeVideo() {
             if (currentVideoId) {
                 window.open(`https://youtube.com/watch?v=${currentVideoId}`, '_blank');
-                addOutput('🌐 Abrindo no YouTube...');
+                addOutput('[!] Abrindo no YouTube...');
             }
         }
 
